@@ -6,11 +6,11 @@ const app = express();
   
 app.use(cors());
 
-app.get('/api', async (req, res) => {
+app.get('/api/top-headlines', async (req, res) => {
     try {
         const { query } = req;
 
-        const apiUrl="https://newsapi.org/v2";
+        const apiUrl="https://newsapi.org/v2/top-headlines";
 
         const url = new URL(apiUrl);
         Object.keys(query).forEach(key => url.searchParams.append(key, query[key]));
