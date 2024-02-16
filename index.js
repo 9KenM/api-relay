@@ -10,8 +10,7 @@ app.get('/api', async (req, res) => {
     try {
         const { query } = req;
 
-        const { apiUrl } = query;
-        delete query.apiUrl;
+        const apiUrl="https://newsapi.org/v2";
 
         const url = new URL(apiUrl);
         Object.keys(query).forEach(key => url.searchParams.append(key, query[key]));
